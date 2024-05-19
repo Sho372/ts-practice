@@ -1,4 +1,4 @@
-const user = {
+const person = {
   name: "Hayes",
   id: 0,
 };
@@ -93,6 +93,4 @@ function logPoint(p: Point) {
 
 const point = { x:12, y:26 }
 logPoint(point)
-
-
 
