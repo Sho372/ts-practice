@@ -1,6 +1,25 @@
 # The Basics
 
+## コンパイル＆実行
+
 https://www.typescriptlang.org/docs/handbook/2/basic-types.html
+
+1. ルートディレクトリでtsc
+2. カレントをout配下のjsファイルがあるディレクトリにして、実行
+    - カレントのパスによっては、ロードエラーが出たことがある
+
+```
+mizunoshohei@MizunonoMacBook-Air TypeScriptHandbook % pwd
+/Users/mizunoshohei/go/src/ts-practice/out/TypeScriptHandbook
+mizunoshohei@MizunonoMacBook-Air TypeScriptHandbook % node 2_everyday_types.js
+```
+
+## ファイル監視で自動コンパイル
+
+1. `tsc -w`でコンパイルを実行
+2. ソースを更新するたびにコンパイルが実行される
+
+[TypeScript: Documentation - Configuring Watch](https://www.typescriptlang.org/docs/handbook/configuring-watch.html#configuring-file-watching-using-a-tsconfigjson)
 
 ## Static type-checking
 
@@ -105,6 +124,29 @@ https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
     - `noImplicitAny`オプションでこれを回避できる
 
 ## Functions
+
+- 関数の入力値と出力値の型を指定できる
+- Promise返す場合も、returnするのはpromiseではなく実際の値
+
+```ts
+// Function Which Return Promises
+async function getFavoriteNumberPromise(): Promise<Number> {
+	return 26;
+}
+```
+
+## tsconfigのプロパティ一覧
+
+### include
+
+- tscの対象に含めるファイル名を指定する
+- `tsconfig.json`ファイルを含んでいるディレクトリからの相対パスで指定
+
+[TypeScript: TSConfig Reference - Docs on every TSConfig option](https://www.typescriptlang.org/tsconfig/#include)
+
+## nodeでjs実行したら`Error: Cannot find module loader:1145`が出た
+
+[javascript - "internal/modules/cjs/loader.js:582 throw err" - Stack Overflow](https://stackoverflow.com/questions/53545800/internal-modules-cjs-loader-js582-throw-err)
 
 
 
